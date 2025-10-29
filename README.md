@@ -30,18 +30,28 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Run with colorful live progress:
+Run with colorful live progress (default duration 1s):
 ```powershell
 python .\speedtest_cli.py
 ```
 
 Options:
+- `-t, --time <seconds>`: Duration for measurement (default: 1)
+- `--download-only`: Run only download test
+- `--upload-only`: Run only upload test
 - `--json`: Print raw JSON (disables live progress)
 - `--no-live`: Disable live progress, keep plain output
 - `--no-secure`: Disable HTTPS to test endpoints (default: secure on)
+- `-h, -help`: Show help
 
 Examples:
 ```powershell
+# 3-second only download
+python .\speedtest_cli.py --download-only -t 3
+
+# 3-second only upload
+python .\speedtest_cli.py --upload-only -t 3
+
 # JSON for scripting
 python .\speedtest_cli.py --json > result.json
 
